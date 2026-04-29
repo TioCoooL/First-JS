@@ -6,12 +6,11 @@
         <title>Javasript</title>
     </head>
     <body>
-        <script type="text/javascript">
-            var counter;
-            counter = 0;
-            while (counter < 5) {
-                console.log('counter is ' + counter);
-                counter += 1;
+        <script type="text/javascript">            
+            var random_value;
+            for (var counter = 1; counter <= 10; counter++) {
+                random_value = Math.floor(Math.random() * 6) + 1;
+                console.log(random_value);
             }
         </script>
 

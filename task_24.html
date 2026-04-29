@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Javasript</title>
+    </head>
+    <body>
+        <script type="text/javascript">            
+            var bot;
+            bot = Math.floor(Math.random() * 3);
+            var user = promt('batu, gunting atau kertas?')
+            for (var counter = 0; counter < 3; counter++) {
+                if (user == 'batu') {
+                    if (bot == 0) {
+                        console.log('User ' + user + ' Vs Computer batu = Draw')
+                    } else if (bot == 1) {
+                        console.log('User ' + user + ' Vs Computer kertas = Computer Wins')
+                    } else if (bot == 2) {
+                        console.log('User ' + user + ' Vs Computer gunting = User Wins')
+                    }
+                } else if (user == 'gunting') {
+                    if (bot == 0) {
+                        console.log('User ' + user + ' Vs Computer batu = Computer Wins')
+                    } else if (bot == 1) {
+                        console.log('User ' + user + ' Vs Computer kertas = User Wins')
+                    } else if (bot == 2) {
+                        console.log('User ' + user + ' Vs Computer gunting = user Wins')
+                    }
+                } else if (user == 'kertas') {
+                    if (bot == 0) {
+                        console.log('User ' + user + ' Vs Computer batu = Draw')
+                    } else if (bot == 1) {
+                        console.log('User ' + user + ' Vs Computer kertas = Computer Wins')
+                    } else if (bot == 2) {
+                        console.log('User ' + user + ' Vs Computer gunting = user Wins')
+                    }
+                }
+            }
+        </script>
+
+        <a href="links.html">Back</a>
+    </body>
+</html>
