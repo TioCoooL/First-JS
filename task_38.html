@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body>
+
+        <div class="w3-border w3-margin ">
+            <div class="w3-container w3-cell w3-border">
+                <div class="w3-center">
+                    <h4><b>Create Account</b></h4>
+                </div>
+
+            <div class="w3-container w3-row-padding">
+                    <div class="w3-half">
+                        <p><label>First Name</label>
+                        <input class="w3-input w3-border" id="fname" type="text"></p>
+                    </div>
+                    <div class="w3-half">
+                        <p><label>Last Name</label>
+                        <input class="w3-input w3-border" id="lname" type="text"></p>
+                    </div>
+            </div>
+
+            <div class="w3-padding">
+                    <label>Country</label>
+                    <select class="w3-select w3-border" id="country">
+                        <option value="" disabled selected>Choose your country</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label>Email Address</label>
+                        <input class="w3-input w3-border" id="email" type="email" placeholder="Email Address">
+                    </div>
+                    <div class="w3-half">
+                        <label>Phone Number</label>
+                        <input class="w3-input w3-border" id="phone" type="text" placeholder="Phone Number">
+                    </div>
+                </div>
+
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label>Password</label>
+                        <input class="w3-input w3-border" id="pwd" type="password" placeholder="Password">
+                    </div>
+                    <div class="w3-half">
+                        <label>Confirm Password</label>
+                        <input class="w3-input w3-border" id="cpwd" type="password" placeholder="Confirm Password">
+                    </div>
+                </div>
+
+                <div class="w3-padding">
+                    <input class="w3-check" id="terms" type="checkbox">
+                    <label> Terms and Condition</label>
+                </div>
+
+                <p class="w3-center">
+                    <button class="w3-button w3-blue" onclick="createAccount()" style="width: 50%;">Create</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-container form-container">
+            <div>
+                <div id="result">
+                    <p><i>Belum ada data yang dikirim.</i></p>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+        function createAccount() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var country = document.getElementById("country").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var pwd = document.getElementById("pwd").value;
+            var cpwd = document.getElementById("cpwd").value;
+            var terms = document.getElementById("terms").checked ? "Disetujui" : "Tidak Disetujui";
+
+            var passwordStatus = "";
+            if (pwd === "" || cpwd === "") {
+                passwordStatus = "<span class='status-mismatch'>Password belum diisi lengkap</span>";
+            } else if (pwd === cpwd) {
+                passwordStatus = "<span class='status-match'>Password Sesuai</span>";
+            } else {
+                passwordStatus = "<span class='status-mismatch'>Password Tidak Sesuai (Mismatch)</span>";
+            }
+
+            var output = "<h3>Data Pendaftaran:</h3>" +
+                            "<b>Nama Lengkap:</b> " + fname + " " + lname + "<br>" +
+                            "<b>Negara:</b> " + country + "<br>" +
+                            "<b>Email:</b> " + email + "<br>" +
+                            "<b>Telepon:</b> " + phone + "<br>" +
+                            "<b>Syarat & Ketentuan:</b> " + terms + "<br>" +
+                            "<b>Status Password:</b> " + passwordStatus;
+
+            document.getElementById("result").innerHTML = output;
+        }
+        </script>
+
+        
+        <a href="links.html">Back</a>
+    </body>
+</html>

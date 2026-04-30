@@ -8,9 +8,10 @@
     <body>
         <script type="text/javascript">            
             var bot;
-            bot = Math.floor(Math.random() * 3);
-            var user = promt('batu, gunting atau kertas?')
+            var user;
             for (var counter = 0; counter < 3; counter++) {
+                bot = Math.floor(Math.random() * 3);
+                user = prompt('batu, gunting atau kertas?')
                 if (user == 'batu') {
                     if (bot == 0) {
                         console.log('User ' + user + ' Vs Computer batu = Draw')
@@ -25,15 +26,15 @@
                     } else if (bot == 1) {
                         console.log('User ' + user + ' Vs Computer kertas = User Wins')
                     } else if (bot == 2) {
-                        console.log('User ' + user + ' Vs Computer gunting = user Wins')
+                        console.log('User ' + user + ' Vs Computer gunting = Draw')
                     }
                 } else if (user == 'kertas') {
                     if (bot == 0) {
-                        console.log('User ' + user + ' Vs Computer batu = Draw')
+                        console.log('User ' + user + ' Vs Computer batu = User Wins')
                     } else if (bot == 1) {
-                        console.log('User ' + user + ' Vs Computer kertas = Computer Wins')
+                        console.log('User ' + user + ' Vs Computer kertas = Draw')
                     } else if (bot == 2) {
-                        console.log('User ' + user + ' Vs Computer gunting = user Wins')
+                        console.log('User ' + user + ' Vs Computer gunting = Computer Wins')
                     }
                 }
             }
