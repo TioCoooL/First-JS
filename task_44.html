@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-white"> 
+        <div class="w3-container w3-center">
+            <div>
+                <h1 id="time">0</h1>
+                <br>
+            </div>
+            <div class="w3-container w3-row-padding">
+                <div class="w3-third">
+                    <button onclick="start()">Start</button>
+                </div>
+                <div class="w3-third">
+                    <button onclick="stop()">Stop</button>
+                </div>
+                <div class="w3-third">
+                    <button onclick="reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <script>
+            var i = 0;
+            timer = document.getElementById("time");
+            var interval = null;
+
+            function start() {
+                if (!interval) {
+                    interval = setInterval(plus, 1000);
+                }
+            }
+
+            function plus() {
+                i++;
+                timer.innerHTML = i;
+            }
+
+            function stop() {
+                clearInterval(interval);
+                interval = null;
+            }
+
+            function reset() {
+                stop();
+                i = 0;
+                timer.innerHTML = i;
+            }
+        </script>
+        <a href="links-extented.html">Back</a>
+    </body>
+</html>

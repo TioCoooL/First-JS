@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .imgStyle {width: 50px;}
+        </style>
+    </head>
+
+    <body class="w3-white"> 
+        <form class="w3-container w3-padding-16 w3-margin">
+            <label>Username</label>
+            <input type="text" class="w3-input w3-border"><br>
+            <label>Password</label>
+            <input type="password" class="w3-input w3-border"><br>
+
+            <div>
+                <div class="w3-row-padding w3-margin">
+                    <img src="" id="num1" class="imgStyle">
+                    <img src="" id="oper" class="imgStyle">
+                    <img src="" id="num2" class="imgStyle">
+                </div>
+                <input type="number" id="ans" class="w3-input w3-border" placeholder="Answer?">
+                <br>
+            </div>
+
+            <button type="button" class="w3-button w3-blue" onclick="login()">Login</button>
+            <p id="msg"></p>
+        </form>
+            
+        <br>
+
+        <script>
+            var nums = [
+                "images/0.png",
+                "images/1.png",
+                "images/2.png",
+                "images/3.png",
+                "images/4.png",
+                "images/5.png",
+                "images/6.png",
+                "images/7.png",
+                "images/8.png",
+                "images/9.png"
+            ]
+
+            var ops = [
+                "images/add.png",
+                "images/minus.png"
+            ]
+
+        
+            var rightAns = 0;
+
+            function random() {
+
+                var img1 = Math.floor(Math.random() * nums.length);
+                var imgOP = Math.floor(Math.random() * ops.length);
+                var img2 = Math.floor(Math.random() * nums.length);
+
+                document.getElementById("num1").src=nums[img1];
+                document.getElementById("oper").src=ops[imgOP];
+                document.getElementById("num2").src=nums[img2];
+
+                if (imgOP == 0) {
+                    rightAns = img1 + img2;
+                } else {
+                    rightAns = img1 - img2;
+                }
+
+                document.getElementById("ans").value = "";
+            }
+
+            random();
+
+            function login() {
+                var input = document.getElementById("ans").value;
+                var msg = document.getElementById("msg");
+
+                if (parseInt(input) == rightAns) {
+                    msg.innerHTML = "CAPTCHA IS CORRECT!"
+                } else {
+                    msg.innerHTML = "CAPTCHA IS WRONG!"
+                    random();
+                }
+            }
+
+
+        </script>
+        <a href="links-extented.html">Back</a>
+    </body>
+</html>

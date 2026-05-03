@@ -8,15 +8,16 @@
 
     <body class="w3-white"> 
         <div class="w3-container w3-center">
-            <button class="w3-button w3-gray w3-margin w3-center" onclick="dark_theme()">Theme</button>
+            <h1 id="date"></h1>
             <br>
         </div>
         
         <script>
-            function dark_theme() {
-                var element = document.body;
-                element.classList.toggle("w3-white");
-                element.classList.toggle("w3-black");
+            setInterval(newDate, 1000);
+
+            function newDate() {
+                const d = new Date();
+                document.getElementById("date").innerHTML = d;
             }
         </script>
         <a href="links-extented.html">Back</a>

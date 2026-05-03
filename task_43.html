@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-white"> 
+        <div class="w3-container w3-center">
+            <img id="img" src="images\RND.jpeg" style="width: 120%;">
+            <br>
+            <div class="w3-container w3-row-padding">
+                <div class="w3-half">
+                    <button class="w3-button w3-gray w3-margin w3-center" onclick="back()">Back</button>
+                </div>
+                <div class="w3-half">
+                    <button class="w3-button w3-gray w3-margin w3-center" onclick="next()">Next</button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var images = [
+                "images/Rektorat.jpeg",
+                "images/RND.jpeg",
+                "images/SC_A.jpeg",
+                "images/SC_B.jpeg"
+            ];
+
+            var img = document.getElementById("img");
+            var i = 1;
+            img.src = images[i];
+
+            function back() {
+                i++;
+                if (i >= images.length) {
+                    i = 0;
+                }
+                img.src = images[i];
+            }
+
+            function next() {
+                i--;
+                if (i < 0) {
+                    i = images.length - 1;
+                }
+                img.src = images[i];
+            }
+
+        </script>
+        <a href="links-extented.html">Back</a>
+    </body>
+</html>
